@@ -119,15 +119,17 @@ app.post('/move', async (req, res) => {
     console.log(`Available moves: ${moves}`)
     console.log(`Selected move: ${move}`)
     try {
-        chess.move(move); // Make the move on the internal board
+        chess.move(move);
     } catch (error) {
-        chess.move(moves[0])
+        const randomIndex = Math.floor(Math.random() * moves.length);
+        const randomMove = moves[randomIndex];
+        chess.move(randomMove);
     }
     res.json({
         success: true,
         move: move,
         gameOver: false,
-        fen: chess.fen() // Send back the new FEN after the move
+        fen: chess.fen() 
     });
 });
 
