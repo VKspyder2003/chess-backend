@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 3001;
 const ALLOWED_ORIGINS = [
     'http://localhost:3000',
     'http://localhost:3001',
-    'https://chess-backend-rt09.onrender.com',
+    'https://chess-vishwas.netlify.app/',
 ];
 app.use(cors({
     origin: (origin, callback) => {
